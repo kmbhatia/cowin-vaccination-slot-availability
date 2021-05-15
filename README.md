@@ -52,8 +52,6 @@ If `Anaconda` doesn't appear on the first line, you are using a different versio
 _This will send notification to the first device associated with PushBullet account._
 &nbsp;
 
-### Want to know more about me?
-## Follow Me
 <a href="https://twitter.com/r0ark5" target="_blank"><img class="ai-subscribed-social-icon" src="https://bhattbhavesh91.github.io/assets/images/tw.png" width="30"></a>
 <a href="https://github.com/roarkscode" target="_blank"><img class="ai-subscribed-social-icon" src="https://bhattbhavesh91.github.io/assets/images/gthb.png" width="30"></a>
 <a href="https://www.linkedin.com/in/sentientnemo/" target="_blank"><img class="ai-subscribed-social-icon" src="https://bhattbhavesh91.github.io/assets/images/lnkdn.png" width="30"></a>
