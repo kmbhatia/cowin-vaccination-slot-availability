@@ -1,6 +1,11 @@
-# CoWIN vaccination slot availability using Python
+# Personal CoWIN Vaccination Slot Availability Alert using Python
+
+This repository is based on Bhavesh Bhatt's repository [cowin-vaccination-slot-availability](https://github.com/bhattbhavesh91/cowin-vaccination-slot-availability).
+Any text in _italics_ is by **Karan Bhatia** which defines that those steps differ from original repository.
 
 Script to check the available slots for Covid-19 Vaccination Centers from CoWIN API in India. This CANNOT book slots automatically. The Indian Government had blocked the API for crawlers, but we are good to go.
+
+_This repository provides personal alert on phone when a vaccination slot frees up._
 
 <!---
 [Click to view the Website](https://bit.ly/3ob9l94)
@@ -8,8 +13,6 @@ Script to check the available slots for Covid-19 Vaccination Centers from CoWIN 
 
 The [CoWin API](https://apisetu.gov.in/public/marketplace/api/cowin) currently states : "Further, these APIs are subject to a rate limit of 100 API calls per 5 minutes per IP".
 &nbsp;
-# Update
-I am humbled to see the overwhelming response that this project has received so far. Feel free to create amazing applications on top of this project. Due to my schedule, I won't be able to allot more time to this project. So there won't be any additional commits to this project.
 
 # Installing Python
 Python is a programming language that is powerful but easy to learn. It is free, platform-independent, and popular among scientists.
@@ -42,33 +45,16 @@ If `Anaconda` doesn't appear on the first line, you are using a different versio
 - The tool only works with Indian IP addresses so disconnect your VPN if needed.
 - Enter the command - `cd cowin-vaccination-slot-availability-main/`
 - Install all the dependencies - `pip3 install -r requirements.txt`
-- Run the python application - `streamlit run app.py`
+- _Install PushBullet - `pip install git+https://github.com/Azelphur/pyPushBullet.git`_
+- _Enter PushBullet Authorization Code in `appv2.py`_
+- _Run the python application - `python appv2.py`_
+
+_This will send notification to the first device associated with PushBullet account._
 &nbsp;
-# Demo
-![](https://github.com/bhattbhavesh91/cowin-vaccination-slot-availability/blob/main/demo/demo_1.gif)
-# Articles
-&nbsp;
-[Link to the article 1](https://analyticsindiamag.com/data-scientist-creates-python-script-to-track-available-slots-for-covid-vaccinations/)    
-&nbsp;
-[Link to the article 2](https://yourstory.com/2021/05/paytm-launches-covid-19-vaccine-finder-tracks-slot-availability/amp)
-
-## To view the video
-
-<table>
-   <tr>
-      <td><a href="http://www.youtube.com/watch?v=tZ2xA19ZALA" target="_blank"><img height="50" src = "https://img.shields.io/youtube/views/tZ2xA19ZALA?color=blue&label=Watch%20on%20YouTube&logo=youtube&logoColor=red&style=for-the-badge"></a></td>
-   </tr>
-</table>
-
-or click on the image below
-
-[![Python Script to Track Available Slots For Covid-19 Vaccinations in India](http://img.youtube.com/vi/tZ2xA19ZALA/0.jpg)](http://www.youtube.com/watch?v=tZ2xA19ZALA)
 
 ### Want to know more about me?
 ## Follow Me
-<a href="https://twitter.com/_bhaveshbhatt" target="_blank"><img class="ai-subscribed-social-icon" src="https://bhattbhavesh91.github.io/assets/images/tw.png" width="30"></a>
-<a href="https://www.youtube.com/bhaveshbhatt8791/" target="_blank"><img class="ai-subscribed-social-icon" src="https://bhattbhavesh91.github.io/assets/images/ytb.png" width="30"></a>
-<a href="https://www.youtube.com/PythonTricks/" target="_blank"><img class="ai-subscribed-social-icon" src="https://bhattbhavesh91.github.io/assets/images/python_logo.png" width="30"></a>
-<a href="https://github.com/bhattbhavesh91" target="_blank"><img class="ai-subscribed-social-icon" src="https://bhattbhavesh91.github.io/assets/images/gthb.png" width="30"></a>
-<a href="https://www.linkedin.com/in/bhattbhavesh91/" target="_blank"><img class="ai-subscribed-social-icon" src="https://bhattbhavesh91.github.io/assets/images/lnkdn.png" width="30"></a>
+<a href="https://twitter.com/r0ark5" target="_blank"><img class="ai-subscribed-social-icon" src="https://bhattbhavesh91.github.io/assets/images/tw.png" width="30"></a>
+<a href="https://github.com/roarkscode" target="_blank"><img class="ai-subscribed-social-icon" src="https://bhattbhavesh91.github.io/assets/images/gthb.png" width="30"></a>
+<a href="https://www.linkedin.com/in/sentientnemo/" target="_blank"><img class="ai-subscribed-social-icon" src="https://bhattbhavesh91.github.io/assets/images/lnkdn.png" width="30"></a>
 
