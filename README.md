@@ -47,7 +47,7 @@ If `Anaconda` doesn't appear on the first line, you are using a different versio
 - Install all the dependencies - `pip3 install -r requirements.txt`
 - _Install PushBullet - `pip install git+https://github.com/Azelphur/pyPushBullet.git`_
 - _Enter PushBullet Authorization Code in `appv2.py`_
-- _Run the python application - `python appv2.py`_
+- _Run the python application at a regular interval by adding it to Crontab - `python appv2.py`_
 
 _This will send notification to the first device associated with PushBullet account._
 &nbsp;
