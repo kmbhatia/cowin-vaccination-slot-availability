@@ -45,3 +45,4 @@ geckodriver.log
 
 config.ini
 config.py
+*.log
