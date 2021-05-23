@@ -6,10 +6,18 @@ import logging
 from fake_useragent import UserAgent
 from pushbullet.pushbullet import PushBullet
 from configparser import ConfigParser
+import shelve
+import os
 
-logging.basicConfig(filename="newfile.log", format='%(asctime)s %(message)s', filemode='a')
+logging.basicConfig(filename="/home/roark/AutoAccessCowin/cowin-vaccination-slot-availabilityv2/newfile.log", format='%(asctime)s %(message)s', filemode='a')
 logger=logging.getLogger()
 logger.setLevel(logging.INFO)
+
+if(os.path.exists("/home/roark/AutoAccessCowin/cowin-vaccination-slot-availabilityv2/PreviousAvailabilityShelf")):
+    shelf = shelve.open("/home/roark/AutoAccessCowin/cowin-vaccination-slot-availabilityv2/PreviousAvailabilityShelf", writeback = True)
+else:
+    shelf = shelve.open("/home/roark/AutoAccessCowin/cowin-vaccination-slot-availabilityv2/PreviousAvailabilityShelf", writeback = True)
+    shelf['previousavailability'] = False
 
 numdays = 7
 DIST_ID = '170'
@@ -38,14 +46,20 @@ for INP_DATE in date_str:
                     for availablesessions in mydistrictcenters['sessions']:
                         logger.info(" : Records Fetched")
                         if((availablesessions['min_age_limit']==18) and (availablesessions['available_capacity']==0)):
-                            text = 'Vaccine Unavailable'
-                            body = 'Go back to sleep'
+                            currentavailability = False
                         else:
-                            text = 'Vaccine Available'
-                            body = 'GO GO GO!!!'
+                            currentavailability = True
         else:
             logger.info(" : No rows in the data Extracted from the API")
-    else:
-        logger.info(" : API Unaccessible")
 
-p.pushNote(p.getDevices()[0]["iden"], text, body)
+
+if(shelf['previousavailability'] != currentavailability):
+    shelf['previousavailability'] = currentavailability
+    if(currentavailability == True):
+        text = 'Vaccine Available'
+        body = 'GO GO GO!!!'
+    else:
+        text = 'Vaccine Unavailable'
+        body = 'Go back to sleep'  
+    p.pushNote(p.getDevices()[0]["iden"], text, body)
+shelf.close()
